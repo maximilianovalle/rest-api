@@ -9,3 +9,6 @@ GET {{rootURL}}/api/books
 Accept: application/json
 
 ###
+
+GET {{rootURL}}/api/books/{id}
+Accept: application/json

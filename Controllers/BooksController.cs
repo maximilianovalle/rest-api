@@ -47,5 +47,15 @@ namespace proj1.Controllers
         {
             return Ok(books);   // 200 OK + books List response
         }
+
+        [HttpGet("{id}")]
+        public ActionResult<Book> GetBookByID(int id)
+        {
+            var book = books.FirstOrDefault(x => x.ID == id);
+
+            if (book == null) return NotFound();
+
+            return Ok(book);
+        }
     }
 }
