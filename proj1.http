@@ -34,3 +34,8 @@ Content-Type: application/json
     "Author": "Me",
     "YearPublished": 1995,
 }
+
+###
+
+DELETE {{rootURL}}/api/books/4
+Content-Type: application/json
