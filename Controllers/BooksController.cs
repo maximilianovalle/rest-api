@@ -54,8 +54,16 @@ namespace proj1.Controllers
             var book = books.FirstOrDefault(x => x.ID == id);
 
             if (book == null) return NotFound();
-
             return Ok(book);
+        }
+
+        [HttpPost]
+        public ActionResult<Book> AddBook(Book newBook)
+        {
+            if (newBook == null) return BadRequest();
+
+            books.Add(newBook);
+            return CreatedAtAction(nameof(GetBookByID), new {id = newBook.ID}, newBook);
         }
     }
 }
