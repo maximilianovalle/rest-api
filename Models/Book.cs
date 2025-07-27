@@ -1,4 +1,4 @@
-// Represent application data + business logic, often designed to represent database tables
+// represents application data + business logic, often designed to represent database tables
 
 namespace proj1.Models
 {
