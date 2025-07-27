@@ -52,18 +52,35 @@ namespace proj1.Controllers
         public ActionResult<Book> GetBookByID(int id)
         {
             var book = books.FirstOrDefault(x => x.ID == id);
-
             if (book == null) return NotFound();
             return Ok(book);
         }
 
+        // send a POST request to API from terminal:
+        // $ curl -X POST -H "Content-Type: application/json" -d '{ "ID": 5, "Title": "Queen of Sorcery (The Belgariad, Book 2)", "Author": "David Eddings", "YearPublished": 1982 }'
         [HttpPost]
         public ActionResult<Book> AddBook(Book newBook)
         {
             if (newBook == null) return BadRequest();
 
             books.Add(newBook);
-            return CreatedAtAction(nameof(GetBookByID), new {id = newBook.ID}, newBook);
+            return CreatedAtAction(nameof(GetBookByID), new { id = newBook.ID }, newBook);
+        }
+
+        // send a PUT request to API from terminal:
+        // $ curl -X PUT http://localhost:5107/api/books/4 -H "Content-Type: application/json" -d '{ "Title": "Edited", "Author": "N/A", "YearPublished": 0 }'
+        [HttpPut("{id}")]
+        public IActionResult UpdateBook(int id, Book updatedBook)
+        {
+            var book = books.FirstOrDefault(x => x.ID == id);
+            if (book == null) return NotFound();
+
+            book.ID = updatedBook.ID;
+            book.Title = updatedBook.Title;
+            book.Author = updatedBook.Author;
+            book.YearPublished = updatedBook.YearPublished;
+
+            return NoContent();
         }
     }
 }

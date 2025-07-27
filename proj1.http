@@ -23,3 +23,14 @@ Content-Type: application/json
     "Author": "David Eddings",
     "YearPublished": 1982,
 }
+
+###
+
+PUT {{rootURL}}/api/books/4
+Content-Type: application/json
+{
+    "ID": 4,
+    "Title": "Wizard's First Rule (The Legend of the Seeker of Truth)",
+    "Author": "Me",
+    "YearPublished": 1995,
+}
