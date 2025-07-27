@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "MB5ba8DQzqQ=",
+  "success": true,
+  "projectFilePath": "/home/twofacedshark/repos/proj1/proj1.csproj",
+  "expectedPackageFiles": [
+    "/home/twofacedshark/.nuget/packages/microsoft.aspnetcore.openapi/9.0.7/microsoft.aspnetcore.openapi.9.0.7.nupkg.sha512",
+    "/home/twofacedshark/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
