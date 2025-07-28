@@ -3,6 +3,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+![output](./project.gif)
+
 Simple books REST API using the ASP.NET Core Web API template!
 
 ## Getting Started
